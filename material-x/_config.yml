@@ -1,0 +1,337 @@
+############################### 基本信息 ###############################
+info:
+  name: 𝓒𝓸𝓬𝓪𝓒𝓸𝓵𝓪.
+  docs: https://wallhaven.cc/
+info1:
+  name: Material-X
+  docs: https://xaoxuu.com/wiki/material-x/index.html
+info2:
+  name: Hexo
+  docs: https://hexo.io/zh-cn/
+info3:
+  name: TingFing
+  docs: https://notebook.tingfengcloud.com/about/
+  cdn: # 要使用CDN，请在根目录的config文件中写上 use_cdn: true
+    css:
+      style: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.11.26/css/style.css
+    js:
+      app: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.11/js/app.js
+      search: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.11/js/search.js
+      volantis: https://cdn.jsdelivr.net/gh/xaoxuu/volantis@1.0.6/js/volantis.min.js
+
+
+
+############################### 主题风格 ###############################
+style: material    # material: 导航栏和标题栏背景是主题色
+# style: pure         # pure: 导航栏和标题栏背景是白色
+
+
+############################### 服务开关 ###############################
+scrollreveal: true
+nodewaves: true
+busuanzi: true
+# fastclick: true
+
+
+
+############################### 默认值 ###############################
+# 音乐控件的默认配置，如果sidebar或者page里没有提供，就取这里的参数
+music:
+  enable: true      # 是否启用
+  color: '#1BCDFC'  # 主题色
+  mode: circulation # random （随机） single （单曲） circulation （列表循环） order （列表）
+  server: netease   # netease（网易云音乐）tencent（QQ音乐） xiami（虾米） kugou（酷狗）
+  type: playlist    # song （单曲） album （专辑） playlist （歌单） search （搜索）
+  id: 2615636388    # 歌曲/专辑/歌单 ID
+  volume: 0.7       # 音量, 0~1
+  autoplay: false   # 自动播放
+
+# 友链页头像占位图
+avatar_placeholder: https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/avatar/avatar.png
+
+# 日期格式 http://momentjs.com/docs/
+date_format: 'YYYY-MM-DD' # 文章发布日期的格式
+updated_date_format: 'll' # 文章更新日期的格式
+
+# 文章字数统计、阅读时长，默认关闭，开启需要安装插件: npm i --save hexo-wordcount
+word_count: true
+
+# 幻灯片
+backstretch:
+  position: full  # cover: 封面背景   full: 整个网页背景
+  duration: 6000 # 持续时间（毫秒）
+  fade: 2500     # 渐变（毫秒）
+  images:
+    - /images/banner.jpg
+
+
+
+############################### 自定义 ###############################
+# page的封面
+cover:
+  scheme: search    # 后期将会提供多种封面方案
+  #height: half      # full（默认值）: 首页封面占据整个第一屏幕，其他页面占半个屏幕高度， half: 所有页面都封面都只占半个屏幕高度
+  title: 听风的笔记本
+  #logo: /images/head.png    # logo和title只显示一个，若同时设置，则只显示logo
+  search_placeholder: '开启新大陆之旅'
+  # 主页封面菜单
+  features:
+     - name: 博文
+       icon: fas fa-rss
+       url: /
+     - name: 项目
+       icon: fas fa-code-branch
+       url: projects/
+     #- name: 友链
+     #  icon: fas fa-link
+     #  url: friends/
+     # rel: nofollow
+     - name: 关于
+       icon: fas fa-info-circle
+       url: about/
+       rel: nofollow
+     - name: playlist
+       icon: fas fa-headphones-alt
+       url: playlist/
+       rel: nofollow
+
+
+# 桌面端导航栏菜单
+menu_desktop:
+  # - name: 分类
+  #   icon: fas fa-folder-open
+  #   url: /categories/
+  #   rel: nofollow
+  - name: 标签
+    icon: fas fa-hashtag
+    url: /tags/
+    rel: nofollow
+  - name: 归档
+    icon: fas fa-archive
+    url: /archives
+    rel: nofollow
+  - name: 歌单
+    icon: fas fa-headphones-alt
+    url: /playlist
+    rel: nofollow
+  
+
+menu:
+  home: / || home
+  categories: /categories/ || th
+  tags: /tags/ || tags
+  archives: /archives/ || archive
+  playlist: /playlist/ || music
+  about: /about/ || user
+  
+
+# 手机端导航菜单（从右上角的按钮点击展开）
+menu_mobile:
+  - name: 近期文章
+    icon: fas fa-clock
+    url: /
+  - name: 文章归档
+    icon: fas fa-archive
+    url: /archives/
+    rel: nofollow
+  # - name: 开源项目
+  #   icon: fas fa-code-branch
+  #   url: projects/
+  # - name: 我的友链
+  #   icon: fas fa-link
+  #   url: friends/
+  #   rel: nofollow
+  # - name: 主题文档
+  #   icon: fas fa-book
+  #   url: https://xaoxuu.com/wiki/material-x/
+  #   rel: nofollow
+  - name: 关于小站
+    icon: fas fa-info-circle
+    url: about/
+    rel: nofollow
+
+layout:
+  # 文章列表（主页、自定义的列表）布局
+  posts:
+    # 列表中每一篇文章的meta信息
+    meta: [title, author, date, categories, wordcount, top]
+    # 列表类页面的侧边栏
+    sidebar: [author, plain, list, grid, category, tagcloud]
+  # 文章页面布局
+  article:
+    # 文章页面主体元素，你也可以在页面的Front-matter中设置
+    body: [article, comments]
+    # 默认的meta信息，文章中没有配置则按照这里的配置来显示，设置为false则不显示
+    # 其中，title只在header中有效，music和thumbnail无需在这里设置，文章中有则显示
+    # 如果tags放置在meta.header中，那么在post列表中不显示（因为卡片下方已经有了）
+    header: [title, author, date, categories, counter, wordcount, top]
+    footer: [updated, tags, share]
+    # 文章页面的侧边栏
+    sidebar: [author, plain, toc, grid, category, tagcloud, list, related_posts]
+  # 其他的页面布局暂时等于文章列表
+
+
+# 侧边栏小部件配置
+sidebar:
+  - widget: author
+    avatar: images/head.png
+    jinrishici: true
+    social: true
+  - widget: toc
+  - widget: grid
+    icon: fas fa-map-signs
+    title: 站内导航
+    rows:
+      - name: 近期文章
+        icon: fas fa-clock
+        url: /
+      - name: 文章归档
+        icon: fas fa-archive
+        url: /archives/
+        rel: nofollow
+  - widget: tagcloud
+    icon: fas fa-tags
+    more:
+      icon: fas fa-expand-arrows-alt
+      url: /tags/
+      rel: nofollow
+  - widget: plain
+    icon: fas fa-handshake 
+    title: "分分钟找到你"
+    body: <script src="https://pv.sohu.com/cityjson?ie=utf-8"></script>
+          <script>var getOSAndBrowser=function(){var os=navigator.platform;var userAgent=navigator.userAgent;var info="";var tempArray="";if(os.indexOf("Win")>-1){if(userAgent.indexOf("Windows NT 5.0")>-1){info+="Win2000"}else if(userAgent.indexOf("Windows NT 5.1")>-1){info+="WinXP"}else if(userAgent.indexOf("Windows NT 5.2")>-1){info+="Win2003"}else if(userAgent.indexOf("Windows NT 6.0")>-1){info+="WindowsVista"}else if(userAgent.indexOf("Windows NT 6.1")>-1||userAgent.indexOf("Windows 7")>-1){info+="Win7"}else if(userAgent.indexOf("Windows NT 6.2")>-1||userAgent.indexOf("Windows 8")>-1){info+="Win8"}else if(userAgent.indexOf("Windows NT 6.3")>-1||userAgent.indexOf("Windows 8.1")>-1){info+="Win8.1"}else if(userAgent.indexOf("Windows NT 10.0")>-1||userAgent.indexOf("Windows 10")>-1){info+="Win10"}else{info+="Other"}}else if(os.indexOf("Mac")>-1){info+="Mac"}else if(os.indexOf("X11")>-1){info+="Unix"}else if(os.indexOf("Linux")>-1){info+="Linux"}else{info+="Other"}info+="/";var isOpera=userAgent.indexOf("Opera")>-1;var isIE=userAgent.indexOf("compatible")>-1&&userAgent.indexOf("MSIE")>-1&&!isOpera;var isEdge=userAgent.toLowerCase().indexOf("edge")>-1&&!isIE;var isIE11=(userAgent.toLowerCase().indexOf("trident")>-1&&userAgent.indexOf("rv")>-1);if(/[Ff]irefox(\/\d+\.\d+)/.test(userAgent)){tempArray=/([Ff]irefox)\/(\d+\.\d+)/.exec(userAgent);info+=tempArray[1]+tempArray[2]}else if(isIE){var version="";var reIE=new RegExp("MSIE (\\d+\\.\\d+);");reIE.test(userAgent);var fIEVersion=parseFloat(RegExp["$1"]);if(fIEVersion==7){version="IE7"}else if(fIEVersion==8){version="IE8"}else if(fIEVersion==9){version="IE9"}else if(fIEVersion==10){version="IE10"}else{version="0"}info+=version}else if(isEdge){info+="Edge"}else if(isIE11){info+="IE11"}else if(/[Cc]hrome\/\d+/.test(userAgent)){tempArray=/([Cc]hrome)\/(\d+)/.exec(userAgent);info+=tempArray[1]+tempArray[2]}else if(/[Vv]ersion\/\d+\.\d+\.\d+(\.\d)* *[Ss]afari/.test(userAgent)){tempArray=/[Vv]ersion\/(\d+\.\d+\.\d+)(\.\d)* *([Ss]afari)/.exec(userAgent);info+=tempArray[3]+tempArray[1]}else if(/[Oo]pera.+[Vv]ersion\/\d+\.\d+/.test(userAgent)){tempArray=/([Oo]pera).+[Vv]ersion\/(\d+)\.\d+/.exec(userAgent);info+=tempArray[1]+tempArray[2]}else{info+="unknown"}return info};document.write("欢迎,来自"+returnCitySN["cname"]+"的朋友");document.write("<br>您的ip:"+returnCitySN["cip"]);document.write("<br>您使用的是"+getOSAndBrowser());</script>
+  
+
+
+
+# 社交信息
+social:
+  # - icon: fas fa-rss
+  #   url: atom.xml
+  - icon: fas fa-envelope
+    url: mailto:18649325562@163.com
+  - icon: fas fa-headphones-alt
+    url: https://music.163.com/#/my/m/music/playlist?id=866897563
+  - icon: fab fa-zhihu
+    url: https://www.zhihu.com/people/fu-gui-tianzhong-qiu/activities
+  - icon: fab fa-weixin
+    url: https://lol.qq.com/main.shtml
+
+
+# 分享按钮
+# 当id为qrcode时需要安装插件  npm i -S hexo-helper-qrcode
+share:
+  - id: qq
+    name: QQ好友
+    img: https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png
+  - id: qzone
+    name: QQ空间
+    img: https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png
+  # - id: qrcode
+  #   name: 微信
+  #   img: https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/wechat.png
+  - id: weibo
+    name: 微博
+    img: https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png
+  # - id: qrcode
+  #   name: QRcode
+  #   img: https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qrcode.png
+
+
+footer_post: 'day day up'
+# footer: '网页页脚文字，支持[markdown](/)'
+
+
+############################### 评论系统 ###############################
+# disqus_shortname: 要使用哪个请复制到根目录配置文件！
+# livere_uid: 要使用哪个请复制到根目录配置文件！
+# gitalk: 要使用哪个请复制到根目录配置文件！
+#   clientID: 你的clientID
+#   clientSecret: 你的clientSecret
+#   repo: 你的repo名
+#   owner: 你的GitHub名
+#   admin: [] 至少填写你的GitHub名
+# leancloud: 要使用哪个请复制到根目录配置文件！
+#   app_id: 你的appId
+#   app_key: 你的appKey
+
+
+############################### 杂项，请勿删除 ###############################
+#valine配置
+valine:
+  enable: true # 如果你想用Valine评论系统，请设置enable为true
+  volantis: true # 是否启用volantis版本（禁止匿名，增加若干贴吧、QQ表情）
+  # 还需要在根目录配置文件中添加下面这三行内容
+  # leancloud:
+  #   app_id: 你的appId
+  #   app_key: 你的appKey
+  guest_info: nick,mail #valine comment header info
+  placeholder: 快来评论吧~ # valine comment input placeholder(like: Please leave your footprints )
+  avatar: mp # gravatar style https://valine.js.org/avatar
+  pageSize: 10 # comment list page size
+  verify: true # valine verify code (true/false)
+  notify: true # valine mail notify (true/false)
+  lang: zh-cn
+  highlight: true
+
+# 搜索配置
+search:
+  enable: true
+  service: hexo
+  # google
+  google_api_key:
+  google_engine_id:
+  # algolia
+  algolia_app_id:
+  algolia_api_key:
+  algolia_index_name:
+  # azure
+  azure_service_name:
+  azure_index_name:
+  azure_query_key:
+  # baidu
+  baidu_api_id:
+
+# Less渲染
+less:
+  compress: true
+
+#统计
+cnzz: true
+
+# Live2D
+## https://github.com/EYHN/hexo-helper-live2d
+## https://l2dwidget.js.org/docs/class/src/index.js~L2Dwidget.html#instance-method-init
+live2d:
+  enable: true
+  #enable: false
+  scriptFrom: local # 默认
+  pluginRootPath: live2dw/ # 插件在站点上的根目录(相对路径)
+  pluginJsPath: lib/ # 脚本文件相对与插件根目录路径
+  pluginModelPath: assets/ # 模型文件相对与插件根目录路径
+  # scriptFrom: jsdelivr # jsdelivr CDN
+  # scriptFrom: unpkg # unpkg CDN
+  # scriptFrom: https://cdn.jsdelivr.net/npm/live2d-widget@3.x/lib/L2Dwidget.min.js # 你的自定义 url
+  tagMode: false # 标签模式, 是否仅替换 live2d tag标签而非插入到所有页面中
+  debug: false # 调试, 是否在控制台输出日志
+  model:
+    use: live2d-widget-model-z16
+    # use: live2d-widget-model-wanko # npm-module package name
+    # use: wanko # 博客根目录/live2d_models/ 下的目录名
+    # use: ./wives/wanko # 相对于博客根目录的路径
+    # use: https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json # 你的自定义 url
+  display:
+    position: right
+    width: 145
+    height: 340
+  mobile:
+    show: true # 是否在移动设备上显示
+    scale: 0.5 # 移动设备上的缩放
+  react:
+    opacityDefault: 0.7
+    opacityOnHover: 0.8
+
+
+
+aplayer:
+  meting: true
