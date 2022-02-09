@@ -31,6 +31,6 @@
     "hexo-tag-aplayer": "^3.0.4",
     "hexo-wordcount": "^6.0.1",
     "live2d-widget-model-z16": "^1.0.5",
-    "yarn": "^1.21.1"
+    "yarn": "^1.22.0"
   }
 }
